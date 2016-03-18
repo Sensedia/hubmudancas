@@ -1,0 +1,1017 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Transportar hub"
+    },
+    "host": "hubmudancas.com.br",
+    "basePath": "/v2",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/transportadoras": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Deslocamento dentro da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Tamanho da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Campos utilizados para a pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "Campos que serão retornados da pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Transpotadoras",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Transpotadora"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto da transportadora",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Transpotadora"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Criado com sucesso"
+                    }
+                }
+            }
+        },
+        "/transportadoras/{transportadoraId}": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "transportadoraId",
+                        "in": "path",
+                        "description": "Identificador da transportadora",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Transpotadora",
+                            "$ref": "#/definitions/Transpotadora"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "transportadoraId",
+                        "in": "path",
+                        "description": "Identificador da transportadora",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto da transportadora",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Transpotadora"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "transportadoraId",
+                        "in": "path",
+                        "description": "Identificador da transportadora",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Excluído com sucesso"
+                    }
+                }
+            }
+        },
+        "/clientes": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Deslocamento dentro da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Tamanho da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Campos utilizados para a pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "Campos que serão retornados da pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Clientes",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Cliente"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Recuperar lista de `Clientes` cadastrados.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto Cliente",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Cliente"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Criado com sucesso"
+                    }
+                }
+            }
+        },
+        "/clientes/{clienteId}": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "clienteId",
+                        "in": "path",
+                        "description": "Identificador do cliente",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Cliente",
+                            "$ref": "#/definitions/Cliente"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Recuperar lista de `Clientes` cadastrados.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "clienteId",
+                        "in": "path",
+                        "description": "Identificador do cliente",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto Cliente",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Cliente"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Atualizado com sucesso"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "clienteId",
+                        "in": "path",
+                        "description": "Identificador do cliente",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Excluído com sucesso"
+                    }
+                }
+            }
+        },
+        "/orcamentos": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Deslocamento dentro da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Tamanho da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Campos utilizados para a pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "Campos que serão retornados da pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Orcamento",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Orcamento"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto Orçamento",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Orcamento"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Criado com sucesso"
+                    }
+                }
+            }
+        },
+        "/orcamentos/{orcamentosId}": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "orcamentosId",
+                        "in": "path",
+                        "description": "Identificador do orçamento",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Orcamento",
+                            "$ref": "#/definitions/Orcamento"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "orcamentosId",
+                        "in": "path",
+                        "description": "Identificador do orçamento",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto Orcamento",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Orcamento"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Atualizado com sucesso"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "orcamentosId",
+                        "in": "path",
+                        "description": "Identificador do orçamento",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Excluído com sucesso"
+                    }
+                }
+            }
+        },
+        "/mudanca": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Deslocamento dentro da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Tamanho da coleção",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Campos utilizados para a pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "Campos que serão retornados da pesquisa.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Mudança",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Mudanca"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto Mudanca",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Mudanca"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Criado com sucesso"
+                    }
+                }
+            }
+        },
+        "/mudanca/{mudancaId}": {
+            "get": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "mudancaId",
+                        "in": "path",
+                        "description": "Identificador da mudança",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "schema": {
+                            "title": "Mudanca",
+                            "$ref": "#/definitions/Mudanca"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Recuperar lista de `Mudanças` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "mudancaId",
+                        "in": "path",
+                        "description": "Identificador da mudança",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Objeto Mudança",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Mudanca"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Atualizado com sucesso"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Recuperar lista de `Trasportadoras` cadastradas.\n",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "header",
+                        "description": "Token da app",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "Token do usuário autenticado para uma app",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "mudancaId",
+                        "in": "path",
+                        "description": "Identificador da mudança",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Excluído com sucesso"
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "client_id": {
+            "type": "apiKey",
+            "name": "client_id",
+            "in": "header"
+        },
+        "access_token": {
+            "type": "apiKey",
+            "name": "access_token",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "Transpotadora": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "cnppj": {
+                    "type": "string"
+                },
+                "Endereco": {
+                    "$ref": "#/definitions/Endereco"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
+        "Cliente": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "Endereco": {
+                    "$ref": "#/definitions/Endereco"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
+        "Orcamento": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "clientid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "enderecoOrigem": {
+                    "$ref": "#/definitions/Endereco"
+                },
+                "enderecoDestino": {
+                    "$ref": "#/definitions/Endereco"
+                },
+                "dataDesejada": {
+                    "type": "string"
+                },
+                "dataLimite": {
+                    "type": "string"
+                },
+                "dataProposta": {
+                    "type": "string"
+                },
+                "orcamentoStatus": {
+                    "type": "string",
+                    "description": "Status do orçamento [Proposta, Recusado, Aceito]"
+                }
+            }
+        },
+        "Mudanca": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "orcamentos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OrcamentoMudanca"
+                    }
+                },
+                "mudancaStatus": {
+                    "type": "string",
+                    "description": "Status da mudança"
+                }
+            }
+        },
+        "OrcamentoMudanca": {
+            "properties": {
+                "idOrcamento": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "dataProposta": {
+                    "type": "string"
+                }
+            }
+        },
+        "Endereco": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        }
+    }
+}
