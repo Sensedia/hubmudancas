@@ -219,8 +219,8 @@ paths:
       # Expected responses for this operation:
       responses:
         # Response code
-        200:
-          description: Sucesso
+        204:
+          description: Excluído com sucesso
   /clientes:
     # This is a HTTP operation
     get:
@@ -391,7 +391,7 @@ paths:
       responses:
         # Response code
         200:
-          description: Sucesso                  
+          description: Atualizado com sucesso                  
     delete:
       # Describe this verb here. Note: you can use markdown
       description: |
@@ -423,21 +423,8 @@ paths:
         # Expected responses for this operation:
       responses:
         # Response code
-        200:
-          description: Successful response
-          # A schema describing your response object.
-          # Use JSON Schema format
-          schema:
-            title: ArrayOfPersons
-            type: array
-            items:
-              title: Person
-              type: object
-              properties:
-                name:
-                  type: string
-                single:
-                  type: boolean 
+        204:
+          description: Excluído com sucesso
   /orcamentos:
     # This is a HTTP operation
     get:
@@ -513,33 +500,25 @@ paths:
           in: header
           description: Token da app
           required: true
-          type: number
-          format: int
+          type: string
         -
           name: access_token
           in: header
           description: Token do usuário autenticado para uma app
           required: true
-          type: number
-          format: int 
+          type: string
+        -
+          name: body
+          in: body
+          description: Objeto Orçamento
+          required: true
+          schema:
+            $ref: "#/definitions/Orcamento"
       # Expected responses for this operation:
       responses:
         # Response code
-        200:
-          description: Successful response
-          # A schema describing your response object.
-          # Use JSON Schema format
-          schema:
-            title: ArrayOfPersons
-            type: array
-            items:
-              title: Person
-              type: object
-              properties:
-                name:
-                  type: string
-                single:
-                  type: boolean 
+        201:
+          description: Criado com sucesso
   /orcamentos/{orcamentosId}:                  
     get:
       # Describe this verb here. Note: you can use markdown
@@ -615,7 +594,7 @@ paths:
       responses:
         # Response code
         200:
-          description: Sucesso                 
+          description: Atualizado com sucesso                 
     delete:
       # Describe this verb here. Note: you can use markdown
       description: |
@@ -648,21 +627,8 @@ paths:
       # Expected responses for this operation:
       responses:
         # Response code
-        200:
-          description: Successful response
-          # A schema describing your response object.
-          # Use JSON Schema format
-          schema:
-            title: ArrayOfPersons
-            type: array
-            items:
-              title: Person
-              type: object
-              properties:
-                name:
-                  type: string
-                single:
-                  type: boolean 
+        204:
+          description: Excluído com sucesso
   /mudanca:
     # This is a HTTP operation
     get:
@@ -738,33 +704,25 @@ paths:
           in: header
           description: Token da app
           required: true
-          type: number
-          format: int
+          type: string
         -
           name: access_token
           in: header
           description: Token do usuário autenticado para uma app
           required: true
-          type: number
-          format: int 
+          type: string
+        -
+          name: body
+          in: body
+          description: Objeto Mudanca
+          required: true
+          schema:
+            $ref: "#/definitions/Mudanca"
       # Expected responses for this operation:
       responses:
         # Response code
-        200:
-          description: Successful response
-          # A schema describing your response object.
-          # Use JSON Schema format
-          schema:
-            title: ArrayOfPersons
-            type: array
-            items:
-              title: Person
-              type: object
-              properties:
-                name:
-                  type: string
-                single:
-                  type: boolean 
+        201:
+          description: Criado com sucesso
   /mudanca/{mudancaId}:                  
     get:
       # Describe this verb here. Note: you can use markdown
@@ -841,7 +799,7 @@ paths:
       responses:
         # Response code
         200:
-          description: Sucesso                  
+          description: Atualizado com sucesso                  
     delete:
       # Describe this verb here. Note: you can use markdown
       description: |
@@ -873,21 +831,8 @@ paths:
       # Expected responses for this operation:
       responses:
         # Response code
-        200:
-          description: Successful response
-          # A schema describing your response object.
-          # Use JSON Schema format
-          schema:
-            title: ArrayOfPersons
-            type: array
-            items:
-              title: Person
-              type: object
-              properties:
-                name:
-                  type: string
-                single:
-                  type: boolean                   
+        204:
+          description: Excluído com sucesso                
 securityDefinitions:
   client_id:
     type: apiKey
