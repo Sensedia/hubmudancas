@@ -2,7 +2,7 @@
 
 ![alt tag](https://github.com/Sensedia/hubmudancas/blob/master/assets/caminhao.jpg)
 
-Você já precisou mudar? E de cidade? E de estado?
+Você já precisou mudar de um casa para outra? E de cidade? E de estado?
 Quanto maior a distância mais sofrida a mudança.
 Baseado neste fato criamos uma API para um sistema de mudanças compartilhadas.
 
