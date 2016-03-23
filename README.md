@@ -3,7 +3,7 @@
 ![alt tag](https://github.com/Sensedia/hubmudancas/blob/master/assets/caminhao.jpg)
 
 Você já precisou mudar de um casa para outra? E de cidade? E de estado?
-Quanto maior a distância mais sofrida a mudança.
+Quanto maior é a distância, mais sofrida é a mudança.
 Baseado neste fato criamos uma API para um sistema de mudanças compartilhadas.
 
 Objetivos:
