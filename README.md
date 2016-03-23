@@ -6,7 +6,7 @@ Você já precisou mudar de um casa para outra? E de cidade? E de estado?
 Quanto maior a distância mais sofrida a mudança.
 Baseado neste fato criamos uma API para um sistema de mudanças compartilhadas.
 
-Hub mudanças
+Objetivos:
   - Conectar clientes e transportadoras
   - Compartilhar mudanças / cargas
  
