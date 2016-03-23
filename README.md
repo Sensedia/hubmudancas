@@ -1,4 +1,4 @@
-  # Hub mudanças #
+# Hub mudanças #
 
 ![alt tag](https://github.com/Sensedia/hubmudancas/blob/master/assets/caminhao.jpg)
 
